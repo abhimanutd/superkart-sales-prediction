@@ -52,7 +52,7 @@ product_data = {
     "Product_Type_Category": Product_Type_Category
 }
 
-# ---------------- Single (online) prediction ----------------
+# Single (online) prediction
 if st.button("Predict Sales", type="primary"):
 
     try:
@@ -68,7 +68,7 @@ if st.button("Predict Sales", type="primary"):
     except requests.exceptions.RequestException as e:
         st.error(f"Unable to connect to the prediction API: {e}")
 
-# ---------------- Batch prediction ----------------
+# Batch prediction
 st.divider()
 st.subheader("Batch Prediction")
 st.write(
@@ -80,7 +80,7 @@ uploaded_file = st.file_uploader("Upload a CSV file", type=["csv"])
 
 if uploaded_file is not None:
 
-    # Show a preview of what was uploaded
+    # Showing a preview of what was uploaded
     preview = pd.read_csv(uploaded_file)
     st.write("Preview of uploaded data:")
     st.dataframe(preview.head(), use_container_width=True)
